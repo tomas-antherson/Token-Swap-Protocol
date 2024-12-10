@@ -1,0 +1,167 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+.gradient {
+  background: linear-gradient(
+    90deg,
+    rgba(35, 35, 35) 0%,
+    rgba(35, 35, 35, 0) 25%,
+    rgba(35, 35, 35, 0) 75%,
+    rgba(35, 35, 35) 100%
+  );
+}
+.swiper-button-disabled {
+  opacity: 0.37 !important;
+}
+/* Marquee */
+.marquee {
+  overflow: hidden;
+  white-space: nowrap;
+  position: relative;
+}
+
+.marquee-inner {
+  animation: marquee 40s linear infinite;
+  animation-delay: -20s;
+}
+.marquee-inner2 {
+  animation-delay: 0s;
+}
+
+.marquee:hover {
+  animation-play-state: paused;
+}
+
+/* Brand Marquee */
+.brand-marquee {
+  overflow: hidden;
+  white-space: nowrap;
+  position: relative;
+}
+
+.marquee:hover {
+  animation-play-state: paused;
+}
+/* Marquee Revert */
+.marquee-revert {
+  overflow: hidden;
+  white-space: nowrap;
+  position: relative;
+}
+
+.marquee-revert-inner {
+  animation: marquee-revert 40s linear infinite;
+  animation-delay: -20s;
+}
+.marquee-revert-inner2 {
+  animation-delay: 0s;
+}
+
+.marquee-revert:hover {
+  animation-play-state: paused;
+}
+
+.brand-marquee-inner img {
+  float: 'left';
+}
+
+@keyframes marquee {
+  0% {
+    left: 100%;
+  }
+
+  100% {
+    left: -100%;
+  }
+}
+
+@keyframes brand-marquee {
+  0% {
+    transform: translateX(100%);
+  }
+
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes marquee-revert {
+  0% {
+    right: 100%;
+  }
+
+  100% {
+    right: -100%;
+  }
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Date Picker */
+.react-datepicker-wrapper {
+  width: 100%;
+}
+
+@media (max-width: 1024px) {
+  .brand-marquee-inner {
+    animation: brand-marquee 40s linear infinite;
+    animation-delay: -20s;
+  }
+  .brand-marquee-inner2 {
+    animation: brand-marquee 40s linear infinite;
+  }
+}
+/* width */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #52515193;
+  border-radius: 3px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #a0a0a08a;
+}
