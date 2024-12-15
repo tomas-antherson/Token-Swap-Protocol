@@ -3,7 +3,6 @@ import { useNavigate } from "react-router-dom";
 export default function Car({ img, name, desc, price, unit, id }) {
   const navigate = useNavigate();
 
-
   return (
     <div
       className="border-b-2 w-full max-w-sm mx-auto justify-self-center border-b-[#545454] hover:border-b-[#A5FF2B] text-left pb-3 transition-colors duration-300"
@@ -15,7 +14,6 @@ export default function Car({ img, name, desc, price, unit, id }) {
     >
       <div className="mb-3 cursor-pointer">
         <div className="relative w-full aspect-[9/10]">
-
           <img className="w-96 aspect-[9/10] object-cover" src={img} />
         </div>
       </div>
@@ -33,5 +31,6 @@ export default function Car({ img, name, desc, price, unit, id }) {
           </span>
         </div>
       </div>
-    </div>);
+    </div>
+  );
 }

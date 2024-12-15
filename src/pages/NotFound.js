@@ -14,7 +14,8 @@ const NotFound = () => {
           Page Not Found
         </h2>
         <p className="text-gray-400 text-lg max-w-lg mx-auto">
-          The page you're looking for seems to have taken a wrong turn. Like a supercar on an empty road, it's nowhere to be found.
+          The page you're looking for seems to have taken a wrong turn. Like a
+          supercar on an empty road, it's nowhere to be found.
         </p>
       </div>
 
@@ -26,7 +27,7 @@ const NotFound = () => {
 
       {/* Return home button */}
       <button
-        onClick={() => navigate('/')}
+        onClick={() => navigate("/")}
         className="bg-green-500 hover:bg-green-600 text-white px-8 py-6 rounded-md text-lg font-medium transition-all duration-200"
       >
         <div className="inline-flex items-center gap-2">

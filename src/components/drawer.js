@@ -7,7 +7,7 @@ import { twMerge } from "tailwind-merge";
 export const Drawer = ({
   children,
   open = false,
-  setOpen = () => { },
+  setOpen = () => {},
   panelClassName = "",
 }) => {
   useEffect(() => {

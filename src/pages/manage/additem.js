@@ -14,7 +14,7 @@ const Additem = ({ setAddItemModal }) => {
   const [gas, setGas] = useState("");
   const [horse_power, sethorsePower] = useState(0);
 
-  const [thumbnailUrl, setThumbnailUrl] = useState('');
+  const [thumbnailUrl, setThumbnailUrl] = useState("");
   const [detailUrls, setDetailUrls] = useState([]);
 
   // const [carname,setCarname]
@@ -30,14 +30,13 @@ const Additem = ({ setAddItemModal }) => {
 
   // Generate and cleanup detail image URLs
   useEffect(() => {
-    const urls = details.map((file) => file ? URL.createObjectURL(file) : '');
+    const urls = details.map((file) => (file ? URL.createObjectURL(file) : ""));
     setDetailUrls(urls);
 
     return () => {
       urls.forEach((url) => URL.revokeObjectURL(url)); // Cleanup old URLs
     };
   }, [details]);
-
 
   const thumbnailRef = useRef(null);
   const detailRef = useRef(null);
@@ -48,11 +47,11 @@ const Additem = ({ setAddItemModal }) => {
   const handleSave = async () => {
     // Validate input
     if (!car_name) {
-      toast.error('Please input car name');
+      toast.error("Please input car name");
       return;
     }
     if (!gas) {
-      toast.error('Please input gas field');
+      toast.error("Please input gas field");
       return;
     }
 
@@ -61,7 +60,6 @@ const Additem = ({ setAddItemModal }) => {
       return;
     }
     try {
-
       const formData = new FormData();
       if (thumbnail) formData.append("carFiles", thumbnail);
       if (details && details.length > 0) {
@@ -72,7 +70,6 @@ const Additem = ({ setAddItemModal }) => {
       // Post request to the backend
       const response = await postService("/files/upload", formData);
       if (response) {
-
         const res = await postService("/categories/", {
           car_name,
           daily_rate,
@@ -84,7 +81,7 @@ const Additem = ({ setAddItemModal }) => {
           files: response.data.files,
         });
         if (res) {
-          toast.success('Saved successfuly');
+          toast.success("Saved successfuly");
           setAddItemModal(false);
         }
       } else {
@@ -174,7 +171,6 @@ const Additem = ({ setAddItemModal }) => {
               {Array.from({ length: 4 }).map((_, index) => (
                 <div
                   key={index}
-
                   className=" relative   aspect-[162.5/125] w-[126px]  md:w-[162px] bg-[#383838] rounded-md overflow-hidden"
                 >
                   {details[index] && (
@@ -184,22 +180,27 @@ const Additem = ({ setAddItemModal }) => {
                       className="object-cover  w-full h-full "
                     />
                   )}
-                  <div className={`${details[index] ? ' opacity-0 hover:opacity-100 ' : ' opacity-100'} bg-[#0000004f] w-full h-full absolute top-0 left-0 transition-opacity duration-300  `} >
+                  <div
+                    className={`${
+                      details[index]
+                        ? " opacity-0 hover:opacity-100 "
+                        : " opacity-100"
+                    } bg-[#0000004f] w-full h-full absolute top-0 left-0 transition-opacity duration-300  `}
+                  >
                     <button
                       onClick={() => {
                         setImamageToChange(index);
-                        if (detailRefSingle.current) detailRefSingle.current.click();
+                        if (detailRefSingle.current)
+                          detailRefSingle.current.click();
                       }}
                       className={`w-[30px] top-1/2 left-1/2 absolute -translate-x-1/2 -translate-y-1/2  h-[30px] md:w-14 md:h-14 flex justify-center items-center rounded-sm gap-2 p-1 md:p-4 bg-[#A5FF2B]     `}
                     >
                       <img className="" src="/images/upload.svg" alt="" />
                     </button>
-
                   </div>
                 </div>
               ))}
             </div>
-
 
             <div className="flex items-center gap-4 text-xs md:text-[15px]">
               <button
@@ -291,7 +292,6 @@ const Additem = ({ setAddItemModal }) => {
                     min={0}
                   />
                 </div>
-
               </div>
             </div>
             <div className="mt-5 justify-start flex flex-col items-start border-b border-[#A5FF2B] gap-1 w-full">

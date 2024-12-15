@@ -6,7 +6,6 @@ import { getService } from "../../utils/services";
 import Car from "../../components/car";
 import { MdOutlineKeyboardArrowDown } from "react-icons/md";
 
-
 const Category = () => {
   const [CateList, setCate_List] = useState([]);
 
@@ -21,7 +20,7 @@ const Category = () => {
   }, []);
 
   return (
-    <div >
+    <div>
       <HeaderSection />
       <BrandsSection />
       <div className="p-12  px-0 md:px-32 md:py-16 max-w-[1440px] m-auto ">
@@ -110,7 +109,6 @@ const Category = () => {
           items={CateList}
           itemsPerPage={9}
         />
-
       </div>
     </div>
   );

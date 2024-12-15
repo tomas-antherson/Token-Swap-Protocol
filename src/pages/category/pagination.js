@@ -4,13 +4,11 @@ import { useEffect, useState } from "react";
 const CategoryPagination = ({
   itemsPerPage,
   items,
-  setCurrentItems = () => { },
+  setCurrentItems = () => {},
 }) => {
   const [itemOffset, setItemOffset] = useState(0);
   const [disablePrev, setDisablePrev] = useState(true);
   const [disableNext, setDisableNext] = useState(false);
-
-
 
   const pageCount = Math.ceil(items.length / itemsPerPage);
 
@@ -24,13 +22,11 @@ const CategoryPagination = ({
     if (event.selected === 0) {
       setDisablePrev(true);
     } else {
-
       setDisablePrev(false);
     }
     if (event.selected === pageCount - 1) {
       setDisableNext(true);
     } else {
-
       setDisableNext(false);
     }
 

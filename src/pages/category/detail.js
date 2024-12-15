@@ -1,8 +1,4 @@
-
 const Detail = () => {
-
-
-
   return (
     <>
       <div

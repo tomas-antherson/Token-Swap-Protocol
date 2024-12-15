@@ -40,10 +40,11 @@ const SignIn = () => {
       <div
         className="h-screen	w-screen overflow-hidden"
         style={{
-          backgroundImage: `url(${window.innerWidth < 395
+          backgroundImage: `url(${
+            window.innerWidth < 395
               ? "/images/auth_mobile_bg.jpg"
               : "/images/auth_desktop_bg.jpg"
-            })`,
+          })`,
         }}
       >
         {/* Header */}
